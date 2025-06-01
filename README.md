@@ -69,9 +69,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-Voici ton contenu en **Markdown (.md)** en français, prêt à être utilisé :
-
-````md
 # Apollo Client
 
 📘 Documentation officielle :  
@@ -83,7 +80,7 @@ https://www.apollographql.com/docs/react/get-started
 
 ```bash
 npm install @apollo/client graphql
-````
+```
 
 ---
 
@@ -91,13 +88,13 @@ npm install @apollo/client graphql
 
 ```js
 // ...
-import { ApolloProvider } from '@apollo/client';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 // ...
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000',
-  cache: new InMemoryCache()
+  uri: "http://localhost:4000",
+  cache: new InMemoryCache(),
 });
 // ...
 ```
@@ -114,8 +111,10 @@ const client = new ApolloClient({
 
 ---
 
-## Envelopper l'application avec `<ApolloProvider client={client}>` 
+## Envelopper l'application avec `<ApolloProvider client={client}>`
+
 pour rendre le client accessible à tous les composants React.
+
 ```
 //   ...
   return (
@@ -136,5 +135,4 @@ pour rendre le client accessible à tous les composants React.
     </div>
   );
 //   ...
-````
-
+```

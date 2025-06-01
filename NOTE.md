@@ -1,4 +1,4 @@
-# Note erreurs
+# Debugging
 
 ## erreur 1
 
@@ -36,15 +36,26 @@ Cette erreur est liée à une incompatibilité entre Node.js 17+ (ou version 20 
 
 ### Contexte
 
-Node.js 17+ utilise OpenSSL 3.0, qui a désactivé certains algorithmes par défaut, ce qui cause cette erreur lors du build avec Webpack (souvent via `react-scripts`).
+- Node.js 17+ utilise OpenSSL 3.0, qui a désactivé certains algorithmes par défaut, ce qui cause cette erreur lors du build avec Webpack (souvent via `react-scripts`).
+
+* OpenSSL est nécessaire parce que Node.js utilise ses fonctions cryptographiques.
+* Webpack dépend de ces fonctions pour faire ses hashes et autres opérations sécurisées.
+* La mise à jour OpenSSL 3 dans Node 17+ a rendu certaines méthodes incompatibles.
+* La variable --openssl-legacy-provider indique à Node d’utiliser une ancienne façon - compatible pour OpenSSL.
 
 ### Solutions
 
-* Utiliser la variable d’environnement pour forcer l’ancienne implémentation :
+- Option 1 : Utiliser la variable d’environnement pour forcer l’ancienne implémentation :
 
 ```bash
 export NODE_OPTIONS=--openssl-legacy-provider
 npm start
 ```
 
+- Option 2 : Modifier le script start dans le package.json
 
+```
+"scripts": {
+  "start": "react-scripts --openssl-legacy-provider start"
+}
+```
