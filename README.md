@@ -111,9 +111,9 @@ const client = new ApolloClient({
 
 ---
 
-## Envelopper l'application avec `<ApolloProvider client={client}>`
+## Envelopper l'application avec ApolloProvider
 
-pour rendre le client accessible à tous les composants React.
+`<ApolloProvider client={client}>` pour rendre le client accessible à tous les composants React.
 
 ```
 //   ...
