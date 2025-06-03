@@ -1,13 +1,8 @@
-# Getting Started with Create React App
+# Projet d’application React avec Apollo Client
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-# Apollo Client
-
-📘 Documentation officielle :  
-https://www.apollographql.com/docs/react/get-started
-
----
 
 ## Installation Apollo-client
 
